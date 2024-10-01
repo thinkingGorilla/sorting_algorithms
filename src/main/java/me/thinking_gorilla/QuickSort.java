@@ -26,11 +26,8 @@ public class QuickSort {
         for (int j = low; j < high; j++) {
             // 현재 요소가 피벗보다 작거나 같다면
             if (array[j] <= pivot) {
-                i++;
                 // 요소 교환
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                swap(array, ++i, j);
             }
         }
 
