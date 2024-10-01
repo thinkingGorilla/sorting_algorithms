@@ -1,2 +1,1 @@
-rootProject.name = "sort_algorithm"
-
+rootProject.name = "sorting_algorithms"

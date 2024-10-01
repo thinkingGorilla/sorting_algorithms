@@ -1,5 +1,7 @@
 package me.thinking_gorilla;
 
+import static me.thinking_gorilla.Utils.print;
+
 public class InsertionSort {
 
     // 삽입 정렬 메소드
@@ -25,17 +27,9 @@ public class InsertionSort {
     // 메인 메소드 (테스트용)
     public static void main(String[] args) {
         int[] array = {64, 25, 12, 22, 11};
-        System.out.println("삽입 정렬 전:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
 
-        // 삽입 정렬 실행
+        print("삽입 정렬 전:", array);
         insertionSort(array);
-
-        System.out.println("\n삽입 정렬 후:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        print("삽입 정렬 후:", array);
     }
 }

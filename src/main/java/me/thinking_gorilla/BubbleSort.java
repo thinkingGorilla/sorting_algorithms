@@ -1,5 +1,8 @@
 package me.thinking_gorilla;
 
+import static me.thinking_gorilla.Utils.print;
+import static me.thinking_gorilla.Utils.swap;
+
 public class BubbleSort {
 
     // 버블 정렬 메소드
@@ -12,9 +15,7 @@ public class BubbleSort {
             for (int j = 0; j < n - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
                     // 요소 교환
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    swap(array, j, j + 1);
                 }
             }
         }
@@ -23,17 +24,9 @@ public class BubbleSort {
     // 메인 메소드 (테스트용)
     public static void main(String[] args) {
         int[] array = {64, 25, 12, 22, 11};
-        System.out.println("정렬 전:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
 
-        // 버블 정렬 실행
+        print("버블 정렬 전:", array);
         bubbleSort(array);
-
-        System.out.println("\n정렬 후:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        print("버블 정렬 후:", array);
     }
 }

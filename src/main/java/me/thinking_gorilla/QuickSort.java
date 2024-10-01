@@ -1,5 +1,8 @@
 package me.thinking_gorilla;
 
+import static me.thinking_gorilla.Utils.print;
+import static me.thinking_gorilla.Utils.swap;
+
 public class QuickSort {
 
     // 메인 정렬 메소드
@@ -32,26 +35,17 @@ public class QuickSort {
         }
 
         // 피벗을 적절한 위치로 이동
-        int temp = array[i + 1];
-        array[i + 1] = array[high];
-        array[high] = temp;
+        swap(array, i + 1, high);
 
         return i + 1; // 피벗의 위치 반환
     }
 
     // 메인 메소드 (테스트용)
     public static void main(String[] args) {
-        int[] array = { 10, 80, 30, 90, 40, 50, 70 };
-        System.out.println("정렬 전:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        int[] array = {10, 80, 30, 90, 40, 50, 70};
 
+        print("퀵 정렬 전:", array);
         quickSort(array, 0, array.length - 1);
-
-        System.out.println("\n정렬 후:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        print("퀵 정렬 후:", array);
     }
 }

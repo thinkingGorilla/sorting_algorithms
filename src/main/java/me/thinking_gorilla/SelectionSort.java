@@ -1,5 +1,8 @@
 package me.thinking_gorilla;
 
+import static me.thinking_gorilla.Utils.print;
+import static me.thinking_gorilla.Utils.swap;
+
 public class SelectionSort {
 
     // 선택 정렬 메소드
@@ -17,26 +20,16 @@ public class SelectionSort {
             }
 
             // 최소값을 현재 위치로 교환
-            int temp = array[minIndex];
-            array[minIndex] = array[i];
-            array[i] = temp;
+            swap(array, minIndex, i);
         }
     }
 
     // 메인 메소드 (테스트용)
     public static void main(String[] args) {
         int[] array = {64, 25, 12, 22, 11};
-        System.out.println("선택 정렬 전:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
 
-        // 선택 정렬 실행
+        print("선택 정렬 전:", array);
         selectionSort(array);
-
-        System.out.println("\n선택 정렬 후:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        print("선택 정렬 후:", array);
     }
 }

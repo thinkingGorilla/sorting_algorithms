@@ -1,5 +1,7 @@
 package me.thinking_gorilla;
 
+import static me.thinking_gorilla.Utils.print;
+
 public class MergeSort {
 
     // 메인 정렬 메소드
@@ -51,16 +53,9 @@ public class MergeSort {
     // 메인 메소드 (테스트용)
     public static void main(String[] args) {
         int[] array = {38, 27, 43, 3, 9, 82, 10};
-        System.out.println("정렬 전:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
 
+        print("병합 정렬 전:", array);
         mergeSort(array);
-
-        System.out.println("\n정렬 후:");
-        for (int value : array) {
-            System.out.print(value + " ");
-        }
+        print("병합 정렬 후:", array);
     }
 }
