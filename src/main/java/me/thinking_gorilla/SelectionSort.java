@@ -15,6 +15,8 @@ public class SelectionSort {
         selectionSort(array, (current, extreme) -> current > extreme);
     }
 
+    // 배열이 정렬된 상태든 아니든 간에 무조건 비교 요소를 한 개 뽑고 배열에 있는 나머지 요소와 비교한다.
+    // 따라서 시간 복잡도는 O(n²)
     private static void selectionSort(int[] array, BiPredicate<Integer, Integer> condition) {
         for (int i = 0; i < array.length - 1; i++) {
 

@@ -14,6 +14,9 @@ public class InsertionSort {
         insertionSort(array, (current, key) -> current < key);
     }
 
+    // 정렬된 상태인 경우 while 조건문이 동작하지 않는다. 즉 배열 길이만큼 순회가 발생한다. → 시간 복잡도는 O(n)
+    // 임의 정렬 상태인 경우 반드시 while 조건문이 동작한다.
+    // 이때 while 조건문에서 배열 길이만큼 순회가 발생한다. → 시간 복잡도는 O(n²)
     public static void insertionSort(int[] array, BiPredicate<Integer, Integer> condition) {
         // 배열의 두 번째 요소부터 시작
         for (int i = 1; i < array.length; i++) {
@@ -22,7 +25,7 @@ public class InsertionSort {
             int key = array[i];
             int j = i - 1;
 
-            // key보다 큰 값을 만나면 해당 값을 오른쪽으로 이동
+            // 순회 요소와 key를 비교하여 조건에 해당하면 요소를 오른쪽으로 이동
             while (j >= 0 && condition.test(array[j], key)) {
                 array[j + 1] = array[j];
                 j--;
