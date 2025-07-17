@@ -34,7 +34,6 @@ public class BubbleSort {
         }
     }
 
-    // 메인 메소드 (테스트용)
     public static void main(String[] args) {
         int[] array = {64, 25, 12, 22, 11};
 

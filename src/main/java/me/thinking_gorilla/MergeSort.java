@@ -1,5 +1,7 @@
 package me.thinking_gorilla;
 
+import java.util.Arrays;
+
 import static me.thinking_gorilla.Utils.print;
 
 public class MergeSort {
@@ -22,6 +24,9 @@ public class MergeSort {
         mergeSort(left);
         mergeSort(right);
 
+        System.out.println("-----");
+        System.out.println("left: " + Arrays.toString(left));
+        System.out.println("right: " + Arrays.toString(right));
         // 정렬된 두 부분 배열을 합병
         merge(array, left, right);
     }
@@ -50,9 +55,8 @@ public class MergeSort {
         }
     }
 
-    // 메인 메소드 (테스트용)
     public static void main(String[] args) {
-        int[] array = {38, 27, 43, 3, 9, 82, 10};
+        int[] array = {38, 27, 43, 3, 9, 82, 10, 7, 55, 34, 1, 10};
 
         print("병합 정렬 전:", array);
         mergeSort(array);
