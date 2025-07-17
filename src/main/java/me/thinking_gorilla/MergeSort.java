@@ -17,6 +17,11 @@ public class MergeSort {
         int[] right = new int[array.length - mid];
 
         // 배열을 왼쪽과 오른쪽으로 나누기
+        // src     복사할 원본 배열
+        // srcPos  원본 배열에서 복사를 시작할 인덱스
+        // dest    복사된 요소를 담을 대상 배열
+        // destPos 대상 배열에 복사할 시작 인덱스
+        // length  복사할 요소의 개수
         System.arraycopy(array, 0, left, 0, mid);
         System.arraycopy(array, mid, right, 0, array.length - mid);
 
